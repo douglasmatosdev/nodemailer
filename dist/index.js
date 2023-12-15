@@ -15,8 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const mailer_1 = __importDefault(require("./mailer"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const port = 3000;
+app.use((0, cors_1.default)({
+    origin: '*'
+}));
 app.use(body_parser_1.default.json());
 app.post('/send-email', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { to, subject, text } = req.body;

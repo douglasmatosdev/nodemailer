@@ -1,9 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import sendMail from './mailer';
+import cors from 'cors';
+
 
 const app = express();
 const port = 3000;
+
+app.use(cors({
+    origin: '*'
+}));
 
 app.use(bodyParser.json());
 

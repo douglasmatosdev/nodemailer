@@ -24,8 +24,8 @@ const transporter = nodemailer.createTransport({
 
 const sendMail = async (to: string, subject: string, text: string) => {
     const mailOptions = {
-        from: user, // Substitua pelo seu e-mail
-        to,
+        from: user,
+        to: user,
         subject,
         text,
     };
